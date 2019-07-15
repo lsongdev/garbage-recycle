@@ -1,0 +1,21 @@
+{
+  "name": "garbage-recycle",
+  "version": "0.0.1",
+  "description": "🚮中国垃圾分类查询",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Lsong",
+  "license": "MIT",
+  "directories": {
+    "example": "example"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/song940/garbage-recycle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/song940/garbage-recycle/issues"
+  },
+  "homepage": "https://github.com/song940/garbage-recycle#readme"
+}
