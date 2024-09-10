@@ -8,53 +8,9 @@
   <title>🚮 垃圾分类查询 🚮</title>
 
   <style>
-    body {
-      width: 90%;
-      margin: auto;
-    }
+    @import url('https://lsong.org/css/stylesheet.css');
+    @import url('https://lsong.org/stylesheets/button.css');
 
-    .block {
-      display: block;
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    .text-uppercase {
-      text-transform: uppercase;
-    }
-
-    h1 {
-      color: green;
-      margin: 10% auto;
-      font-size: 3em;
-      font-family: monospace;
-    }
-
-    img {
-      width: 100px;
-      margin-right: 10px;
-    }
-
-    input,
-    button {
-      outline: 0;
-      width: 100%;
-      box-sizing: border-box;
-      font-size: 32px;
-      appearance: none;
-      padding: 10px 0;
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    button {
-      color: white;
-      border: none;
-      background: #26c3c3;
-    }
 
     ol#results,
     ul#categories {
@@ -83,7 +39,7 @@
     .garbage {
       display: flex;
       line-height: 32px;
-      margin: 10px;
+      margin: 10px 0;
       padding: 10px;
       background-color: #eee;
     }
@@ -125,8 +81,8 @@
 
 <script id="result" type="text/template">
   <li class="garbage" style="color: #{category.color}"  >
-      <span class="garbage-name" >#{name}</span>
-      <span class="garbage-category" style="background-color: #{category.bgcolor}" >#{category.name}</span>
+    <span class="garbage-name" >#{name}</span>
+    <span class="garbage-category" style="background-color: #{category.bgcolor}" >#{category.name}</span>
   </li>
 </script>
 
@@ -137,18 +93,60 @@
 </script>
 
 <body>
-  <h1 class="text-center text-uppercase">垃圾分类查询</h1>
-  <form>
-    <input class="input text-center" type="text" name="q">
-    <button class="text-center text-uppercase">查询</button>
-  </form>
-  <ul id="categories"></ul>
-  <ol id="results">
-  </ol>
-  <footer class="text-center">
-    <a href="https://github.com/song940/garbage-recycle">Garbage Recycle Project at GitHub.com</a>
-    <br />Made by <a href="https://lsong.org">Lsong</a> &copy; 2019
-  </footer>
+  <div class="container">
+
+    <header class="header scrollbar-hide">
+      <a class="heading" href="/">
+        <img src="https://lsong.org/icon.svg" alt="" class="logo" width="24">
+        <h1 class="title">Garbage Recycle</h1>
+      </a>
+      <nav id="navbar" class="nav nav-bar">
+        <a href="//lsong.org">home</a>
+        <a href="//lsong.org/posts">blog</a>
+        <a href="//lsong.org/books">books</a>
+        <a href="//lsong.org/music">music</a>
+        <a href="//lsong.org/apps">apps</a>
+        <x-inbox></x-inbox>
+      </nav>
+      <hr />
+    </header>
+
+    <main class="content">
+
+      <section id="hello"></section>
+      <h2>Hello 👋</h2>
+      <p class="headline">
+        Hi, I'm Liu Song, a full-stack developer with a passion for open-source software.
+        I have experience in web and mobile development, as well as a background in embedded systems and network
+        protocols.
+        I enjoy writing tech <a href="//lsong.org/posts">blogs</a> and developing <a
+          href="//lsong.org/apps.html">applications</a> in my spare time.
+        Proficient in Node.js, Golang, and server operations, I'm always eager to learn more and contribute to the
+        community.
+        Check out my GitHub <a href="https://github.com/song940">@song940</a> for some of my projects and feel free
+        to connect
+        with me to discuss ideas.
+        When I'm not coding, I enjoy listening to <a href="//lsong.org/music">music</a> and playing <a
+          href="//lsong.org/games">games</a>.
+      </p>
+      </section>
+
+      <section>
+        <h2>Garbage Recycle</h2>
+        <form class="input-group width-full">
+          <input class="input text-center" type="search" name="q">
+          <button class="button button-primary">查询</button>
+        </form>
+        <ul id="categories"></ul>
+        <ol id="results"></ol>
+      </section>
+
+    </main>
+    <footer class="text-center">
+      <a href="https://github.com/song940/garbage-recycle">Garbage Recycle Project at GitHub.com</a>
+      <br />Made by <a href="https://lsong.org">Lsong</a> &copy; 2019
+    </footer>
+  </div>
 </body>
 <script>
 
@@ -181,7 +179,7 @@
     const template = document.getElementById(id).innerHTML;
     const div = document.createElement('div');
     div.innerHTML = template.replace(/#{([\s\S]*?)}/g, (_, name) => get(data, name.trim()));
-    return div;
+    return div.firstElementChild;
   }
 
   const fetchCategories = () =>
