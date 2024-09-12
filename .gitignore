@@ -1,6 +1,0 @@
-
-*.log
-yarn.lock
-
-.cache
-node_modules/
