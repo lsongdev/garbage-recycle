@@ -71,57 +71,55 @@
 </head>
 
 <body>
-  <div class="container">
-    <header class="header scrollbar-hide">
-      <a class="heading" href="/">
-        <img src="https://lsong.org/icon.svg" alt="" class="logo" width="24">
-        <h1 class="title">Garbage Recycle</h1>
-      </a>
-      <nav id="navbar" class="nav nav-bar">
-        <a href="//lsong.org">home</a>
-        <a href="//lsong.org/posts">blog</a>
-        <a href="//lsong.org/books">books</a>
-        <a href="//lsong.org/music">music</a>
-        <a href="//lsong.org/apps">apps</a>
-        <x-inbox></x-inbox>
-      </nav>
-      <hr />
-    </header>
+  <header class="navbar scrollbar-hide">
+    <a class="heading navbar-brand" href="/">
+      <img src="https://lsong.org/icon.svg" alt="" class="logo" width="24">
+      <h1 class="title">Garbage Recycle</h1>
+    </a>
+    <nav id="navbar">
+      <a href="//lsong.org">home</a>
+      <a href="//lsong.org/posts">blog</a>
+      <a href="//lsong.org/books">books</a>
+      <a href="//lsong.org/music">music</a>
+      <a href="//lsong.org/apps">apps</a>
+      <x-inbox></x-inbox>
+    </nav>
+    <hr />
+  </header>
 
-    <main class="content">
-      <section id="hello">
-        <h2>Hello 👋</h2>
-        <p class="headline">
-          Hi, I'm Liu Song, a full-stack developer with a passion for open-source software.
-          I have experience in web and mobile development, as well as a background in embedded systems and network
-          protocols.
-          I enjoy writing tech <a href="//lsong.org/posts">blogs</a> and developing <a
-            href="//lsong.org/apps.html">applications</a> in my spare time.
-          Proficient in Node.js, Golang, and server operations, I'm always eager to learn more and contribute to the
-          community.
-          Check out my GitHub <a href="https://github.com/lsongdev">@lsongdev</a> for some of my projects and feel free to
-          connect with me to discuss ideas.
-          When I'm not coding, I enjoy listening to <a href="//lsong.org/music">music</a> and playing <a
-            href="//lsong.org/games">games</a>.
-        </p>
-      </section>
+  <main class="content">
+    <section id="hello">
+      <h2>Hello 👋</h2>
+      <p class="headline">
+        Hi, I'm Liu Song, a full-stack developer with a passion for open-source software.
+        I have experience in web and mobile development, as well as a background in embedded systems and network
+        protocols.
+        I enjoy writing tech <a href="//lsong.org/posts">blogs</a> and developing <a
+          href="//lsong.org/apps.html">applications</a> in my spare time.
+        Proficient in Node.js, Golang, and server operations, I'm always eager to learn more and contribute to the
+        community.
+        Check out my GitHub <a href="https://github.com/lsongdev">@lsongdev</a> for some of my projects and feel free to
+        connect with me to discuss ideas.
+        When I'm not coding, I enjoy listening to <a href="//lsong.org/music">music</a> and playing <a
+          href="//lsong.org/games">games</a>.
+      </p>
+    </section>
 
-      <section>
-        <h2>Garbage Recycle</h2>
-        <form id="searchForm" class="input-group width-full">
-          <input class="input text-center" type="search" name="q">
-          <button class="button button-primary">查询</button>
-        </form>
-        <ul id="categories"></ul>
-        <ol id="results"></ol>
-      </section>
-    </main>
+    <section>
+      <h2>Garbage Recycle</h2>
+      <form id="searchForm" class="input-group width-full">
+        <input class="input text-center" type="search" name="q">
+        <button class="button button-primary">查询</button>
+      </form>
+      <ul id="categories"></ul>
+      <ol id="results"></ol>
+    </section>
+  </main>
 
-    <footer class="text-center">
-      <a href="https://github.com/song940/garbage-recycle">Garbage Recycle Project at GitHub.com</a>
-      <br />Made by <a href="https://lsong.org">Lsong</a> &copy; 2019
-    </footer>
-  </div>
+  <footer class="text-center">
+    <a href="https://github.com/song940/garbage-recycle">Garbage Recycle Project at GitHub.com</a>
+    <br />Made by <a href="https://lsong.org">Lsong</a> &copy; 2019
+  </footer>
 
   <template id="category-template">
     <li>
